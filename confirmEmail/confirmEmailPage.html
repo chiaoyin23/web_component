@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>confirmEmailPage</title>
+    <link href="../image/logo.png" rel="icon">
+    <link rel="stylesheet" href="./confirmEmailPage.css">
+    
+</head>
+<body>
+    <main>
+        <div class="card">
+            <div class="greetings">
+                <div>
+                    <h1 class="hello">政大通帳號開通</h1>
+                    <p>親愛的用戶您好，歡迎使用政大通APP，期許給您帶來美好的用戶體驗並更享受大學生活！點擊按鈕進行帳戶驗證，完成後即可登入APP
+                    </p>
+                </div>
+            </div>
+
+            <div class="welcome">
+                <h2>Welcome</h2>
+                <div class="info"> 
+                    <img src="../image/logo.png" alt="">
+                    <p class="name">NCCUPASS</p>
+                    <div class="status">準備上線囉</div>
+                    <button id="callApiButton" class="button">點我驗證信箱</button>
+                </div>
+            </div>
+
+        </div>  
+    </main>
+
+    <script>
+        const button = document.getElementById('callApiButton');
+
+        button.addEventListener('click', () => {
+
+            // 這邊怎麼取得
+            const userId = 'your-user-id';
+            const token = 'your-token'; 
+
+            //url的地方 前面的網址http....
+            const apiUrl = `/api/nccupass/UserIdentity/verify/${userId}/${token}`;
+
+            fetch(apiUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('network error');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log(data);
+
+                    window.location.href = 'https://nccupass.com/';
+                })
+                .catch(error => {
+                    console.error('error', error);
+                });
+        });
+    </script>
+   
+
+    
+</body>
+</html>
