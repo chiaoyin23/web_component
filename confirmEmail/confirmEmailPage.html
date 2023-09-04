@@ -25,12 +25,19 @@
                     <img src="../image/logo.png" alt="">
                     <p class="name">NCCUPASS</p>
                     <div class="status">準備上線囉</div>
-                    <button id="callApiButton" class="button">點我驗證信箱</button>
+                    <button id="toEmailSuccess" class="button">點我驗證信箱</button>
                 </div>
             </div>
 
         </div>  
     </main>
+
+    <script>
+        var button = document.getElementById("toEmailSuccess");
+        button.addEventListener("click", function() {
+            window.location.href = "confirmEmailSuccess.html"; 
+        });
+    </script>
 
     <!-- <script>
         const button = document.getElementById('callApiButton');

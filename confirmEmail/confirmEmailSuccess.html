@@ -24,12 +24,20 @@
                     <img src="../image/logo.png" alt="">
                     <p class="name">驗證成功</p>
                     <div class="status">已開通</div>
-                    <button id="callApiButton" class="button">確認</button>
+                    <button id="callWeb" class="button">確認</button>
                 </div>
             </div>
 
         </div>  
     </main>
+
+    <script>
+        var button = document.getElementById("callWeb");
+        button.addEventListener("click", function() {
+            window.location.href = "https://nccupass.com/"; 
+        });
+    </script>
+
 
     <!-- <script>
         const button = document.getElementById('callApiButton');
