@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>forgetPasswordPage</title>
+    <title>confirmEmailSuccess</title>
     <link href="../image/logo.png" rel="icon">
-    <link rel="stylesheet" href="./forgetPasswordPage.css">
+    <link rel="stylesheet" href="./confirmEmailSuccess.css">
     
 </head>
 <body>
@@ -13,22 +13,19 @@
         <div class="card">
             <div class="greetings">
                 <div>
-                    <h1 class="hello">政大通-NCCU PASS</h1>
-                    <h1 class="hello1">忘記密碼</h1>
+                    <h1 class="hello">政大通-NCCU PASS帳號開通</h1>
+                    <h1 class="hello1">誠摯歡迎您使用政大通APP</h1>
                 </div>
             </div>
 
             <div class="welcome">
+                <h2>Success</h2>
                 <div class="info"> 
                     <img src="../image/logo.png" alt="">
-                    <p>新密碼 : </p>
-                    <input type="text" id="password" name="password" required minlength="8" size="20" />
-                   
-                    <p>確認密碼 : </p>
-                    <input type="text" id="confirmpassword" name="confirmpassword" required minlength="8" size="20" />
-                   
+                    <p class="name">驗證成功</p>
+                    <div class="status">已開通</div>
+                    <button id="callApiButton" class="button">確認</button>
                 </div>
-                <button id="callApiButton" class="button">確認送出</button>
             </div>
 
         </div>  
@@ -43,7 +40,8 @@
             const userId = 'your-user-id';
             const token = 'your-token'; 
 
-            //url的地方 前面的網址http....
+            //url的地方 前面的網址http....?
+            //https://nccupass.com/swagger/index.html
             const apiUrl = `/api/nccupass/UserIdentity/verify/${userId}/${token}`;
 
             fetch(apiUrl)
