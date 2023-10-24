@@ -34,7 +34,7 @@
         <a href="" id="applink">
         </a></span>
     <main>
-        <div class="card" id="overlay">
+        <div class="card">
             <div class="greetings">
                 <div>
                     <h1 class="title">政大通-NCCU PASS</h1>
@@ -52,6 +52,7 @@
 
                 <div class="modal" id="modal">
                     <div class="modal_inner">
+                        <img src="../image/logo.png" alt="">
                         <h2>確認刪除帳號</h2>
                         <p>您確定要刪除政大通-NCCU PASS帳號嗎？</p>
                         <div class="btn_group">
@@ -59,6 +60,13 @@
                             <button id="nextButton" class="subBtn" onclick="openPopup()">確認</button>
                         </div>
                     </div >
+                </div>
+
+                <div class="successDel" id="successDel">
+                    <img src="../image/logo.png" alt="">
+                    <p class="name">NCCUPASS</p>
+                    <div class="status">已刪除帳號</div>
+                    <p>您已成功刪除帳號</p>
                 </div>
             </div>
 
@@ -71,7 +79,7 @@
                 <p>請再次確認您是否要刪除政大通-NCCU PASS帳號？</p>
                 <div class="btn_group">
                     <button class="subBtn" onclick="closePopup()">取消返回</button>
-                    <button class="subBtn" onclick="closePopup()">確認刪除</button>
+                    <button class="subBtn" onclick="successDelPopup()">確認刪除</button>
                 </div>
             </div>
         </div>
@@ -84,6 +92,7 @@
          const nextButton = document.getElementById("nextButton");
          const backButton = document.getElementById("backButton");
          const popup = document.getElementById("popup");
+         const successDelElement = document.getElementById("successDel");
 
         function openPopup(){
             popup.classList.add("open-popup");
@@ -94,6 +103,10 @@
             infoElement.style.display = "block";
         }
 
+        function successDelPopup(){
+            popup.classList.remove("open-popup");
+            successDelElement.style.display = "block";
+        }
 
          modalOpen.addEventListener('click', () => {
             infoElement.style.display = "none";
@@ -109,13 +122,6 @@
             infoElement.style.display = "none";
             modalElement.style.display = "none";
          })
-
-        //  覆蓋還沒寫
-         nextButton.addEventListener("click", function() {
-             overlay.style.backgroundColor = "rgba(0, 0, 0, 0)";
-         });
-
-
 
 
         // const button = document.getElementById('callApiButton');
