@@ -126,21 +126,18 @@
 
         const button = document.getElementById('callApiButton');
         button.addEventListener('click', () => {
-            
-            const token = getQueryParam('token');
+        
+            const jwtToken = localStorage.getItem('jwtToken');
 
             if (token) {
                 const deleteApiUrl = 'https://api.nccupass.com/nccupass/UserIdentity/account';
-                // const requestData = {
-                //     "token": token,
-                // };
 
                 fetch(deleteApiUrl, {
                     method: 'DELETE',
                     headers: {
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${jwtToken}`
                     },
-                    // body: JSON.stringify()
                 })
 
                     .then(response => {
@@ -155,7 +152,7 @@
                         alert('發生錯誤：', error);
                     })
             } else {
-                console.error('找不到token！');
+                console.error('找不到jwtToken！');
             }
 
         });
