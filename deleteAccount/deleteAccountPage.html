@@ -20,7 +20,7 @@
     </script>
 </head>
 
-<body onload="detectPlatformAndLaunchApp()">
+<body>
     <span style="visibility: hidden;">
         <a href="" id="applink">
         </a></span>
@@ -119,6 +119,7 @@
         button.addEventListener('click', () => {
 
             const token = getQueryParam("token");
+            console.log(token)            
 
             if (token) {
                 const deleteApiUrl = 'https://api.nccupass.com/nccupass/UserIdentity/account';
