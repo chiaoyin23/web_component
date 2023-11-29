@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>confirmEmailSuccess</title>
     <link href="../image/logo.png" rel="icon">
     <link rel="stylesheet" href="./confirmEmailSuccess.css">
-    
+    <script type="text/javascript">
+
+        function detectPlatformAndLaunchApp() {
+
+            document.getElementById("applink").href = "applinks://nccupass.com/login";
+            // 如果是手機
+            var userAgent = navigator.userAgent.toLowerCase();
+            if (userAgent.search(/iphone|ipad|ipod|Android/) > -1) {
+                document.getElementById("applink").click()
+            } else {
+                window.location.href = "https://nccupass.com/";
+            }
+        }
+    </script>
 </head>
+
 <body>
+    <span style="visibility: hidden;">
+        <a href="" id="applink">
+        </a></span>
     <main>
         <div class="card">
             <div class="greetings">
@@ -20,7 +38,7 @@
 
             <div class="welcome">
                 <h2>Success</h2>
-                <div class="info"> 
+                <div class="info">
                     <img src="../image/logo.png" alt="">
                     <p class="name">驗證成功</p>
                     <div class="status">已開通</div>
@@ -28,13 +46,13 @@
                 </div>
             </div>
 
-        </div>  
+        </div>
     </main>
 
     <script>
         var button = document.getElementById("callWeb");
         button.addEventListener("click", function() {
-            window.location.href = "https://nccupass.com/"; 
+            detectPlatformAndLaunchApp();
         });
     </script>
 
@@ -46,7 +64,7 @@
 
             // 這邊怎麼取得
             const userId = 'your-user-id';
-            const token = 'your-token'; 
+            const token = 'your-token';
 
             //url的地方 前面的網址http....?
             //https://nccupass.com/swagger/index.html
@@ -69,8 +87,9 @@
                 });
         });
     </script> -->
-   
 
-    
+
+
 </body>
+
 </html>
