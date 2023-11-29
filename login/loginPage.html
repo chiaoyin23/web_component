@@ -129,8 +129,10 @@
                     })
                     .then(result => {
                         console.log(result);
+                        console.log(result.data.jwt.accessToken);
                         document.cookie = `accessToken=${result.data.jwt.accessToken}; path=/; secure; HttpOnly;`;
-                        window.location.href = '../deleteAccount/deleteAccountPage.html';
+                        console.log(document.cookie)
+                        //window.location.href = '../deleteAccount/deleteAccountPage.html';
                         return result;
                     })
                     .catch(error => {

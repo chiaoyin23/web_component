@@ -114,22 +114,24 @@
             modalElement.style.display = "none";
          })
 
-        const  accessTokenCookie = document.cookie;
-        console.log(accessTokenCookie);
+         const cookies = document.cookie.split(';').map(cookie => cookie.trim());
+         const accessTokenCookie = cookies.find(cookie => cookie.startsWith('accessToken='));
+        const accessToken = accessTokenCookie ? accessTokenCookie.split('=')[1] : null;
+        console.log(accessToken);
 
 
 
         const button = document.getElementById('callApiButton');
         button.addEventListener('click', () => {
           
-            if (accessTokenCookie) {
+            if (accessToken) {
                 const deleteApiUrl = 'https://api.nccupass.com/nccupass/UserIdentity/account';
 
                 fetch(deleteApiUrl, {
                     method: 'DELETE',
                     headers: {
                         'Content-Type': 'application/json',
-                        'Authorization': accessTokenCookie 
+                        'Authorization': accessToken
                     },
                 })
                 .then(response => {
