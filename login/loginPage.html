@@ -122,12 +122,16 @@
                     })
                     .then(response => {
                         console.log(response);
-                        if (response.ok) {
-                            console.log("登入成功");
-                            window.location.href = '../deleteAccount/deleteAccountPage.html';
-                        } else {
-                            console.log("登入失敗");
+                        if (!response.ok) {
+                            throw Error("登入失敗");
                         }
+                        return response.json();
+                    })
+                    .then(result => {
+                        console.log(result);
+                        document.cookie = `accessToken=${result.data.jwt.accessToken}; path=/; secure; HttpOnly;`;
+                        window.location.href = '../deleteAccount/deleteAccountPage.html';
+                        return result;
                     })
                     .catch(error => {
                         console.log(error);

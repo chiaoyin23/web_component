@@ -7,7 +7,7 @@
     <title>forgetPasswordPage</title>
     <link href="../image/logo.png" rel="icon">
     <link rel="stylesheet" href="./deleteAccountPage.css">
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
         function getQueryParam(param) {
             const urlParams = new URLSearchParams(window.location.search);
             const paramValue = urlParams.get(param);
@@ -17,7 +17,7 @@
             return paramValue;
         }
 
-    </script>
+    </script> -->
 </head>
 
 <body>
@@ -114,35 +114,36 @@
             modalElement.style.display = "none";
          })
 
+        const  accessTokenCookie = document.cookie;
+        console.log(accessTokenCookie);
+
+
 
         const button = document.getElementById('callApiButton');
         button.addEventListener('click', () => {
-
-            const token = getQueryParam("token");
-            console.log(token)            
-
-            if (token) {
+          
+            if (accessTokenCookie) {
                 const deleteApiUrl = 'https://api.nccupass.com/nccupass/UserIdentity/account';
 
                 fetch(deleteApiUrl, {
                     method: 'DELETE',
                     headers: {
                         'Content-Type': 'application/json',
-                        'Authorization': token
+                        'Authorization': accessTokenCookie 
                     },
                 })
+                .then(response => {
+                    if (response.ok) {
+                        alert('刪除帳號成功！');
+                    } else {
+                        alert('刪除帳號失敗！');
+                    }
+                })
 
-                    .then(response => {
-                        if (response.ok) {
-                            alert('刪除帳號成功！');
-                        } else {
-                            alert('刪除帳號失敗！');
-                        }
-                    })
+                .catch(error => {
+                    alert('發生錯誤：', error);
+                })
 
-                    .catch(error => {
-                        alert('發生錯誤：', error);
-                    })
             } else {
                 console.error('not authorized');
             }
