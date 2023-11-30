@@ -125,10 +125,7 @@
                 }
             }
 
-            //null...
-            console.log(accessToken);
-
-
+        //console.log(accessToken);
 
         const button = document.getElementById('callApiButton');
         button.addEventListener('click', () => {
@@ -140,7 +137,7 @@
                     method: 'DELETE',
                     headers: {
                         'Content-Type': 'application/json',
-                        'Authorization': accessToken
+                        'Authorization': `Bearer${accessToken}`
                     },
                 })
                 .then(response => {

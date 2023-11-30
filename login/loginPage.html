@@ -102,6 +102,10 @@
             const passwordInput = document.getElementById('password');
             const password = passwordInput.value;
 
+            //5 min
+            const expirationTime = new Date();
+            expirationTime.setTime(expirationTime.getTime() + 5 * 60 * 1000); 
+
             if (account == ""||password == "") {
 
                 errorMessageElement.textContent= "請輸入完整帳號及密碼"
@@ -130,9 +134,9 @@
                     .then(result => {
                         console.log(result);
                         console.log(result.data.jwt.accessToken);
-                        document.cookie = `accessToken=${result.data.jwt.accessToken};path=/`;
+                        document.cookie = `accessToken=${result.data.jwt.accessToken};expires=${expirationTime.toUTCString()};path=/;domain=nccupass.com;secure;HttpOnly;`;
                         console.log(document.cookie)
-                        //window.location.href = '../deleteAccount/deleteAccountPage.html';
+                        window.location.href = '../deleteAccount/deleteAccountPage.html';
                         return result;
                     })
                     .catch(error => {
