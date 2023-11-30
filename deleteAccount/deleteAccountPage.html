@@ -114,10 +114,19 @@
             modalElement.style.display = "none";
          })
 
-         const cookies = document.cookie.split(';').map(cookie => cookie.trim());
-         const accessTokenCookie = cookies.find(cookie => cookie.startsWith('accessToken='));
-        const accessToken = accessTokenCookie ? accessTokenCookie.split('=')[1] : null;
-        console.log(accessToken);
+        const cookies = document.cookie.split(';').map(cookie => cookie.trim());
+            let accessToken;
+
+            for (const cookie of cookies) {
+                const [name, value] = cookie.split('=');
+                if (name === 'accessToken') {
+                    accessToken = value;
+                    break;
+                }
+            }
+
+            //null...
+            console.log(accessToken);
 
 
 
