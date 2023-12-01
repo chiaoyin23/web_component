@@ -13,7 +13,6 @@
         function detectPlatformAndLaunchApp() {
             var url = window.location.href;
             url = url.replace(new RegExp("https", "g"), "applinks");
-            alert(url);
             document.getElementById("applink").href = url;
             // 如果是手機
             var userAgent = navigator.userAgent.toLowerCase();
