@@ -93,6 +93,7 @@ body{
 .btn_group{
     display: flex;
     align-items: center; 
+    justify-content: center;
 }
 
 .subBtn {
