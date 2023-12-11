@@ -93,7 +93,6 @@ body{
 .btn_group{
     display: flex;
     align-items: center; 
-    justify-content: space-around;
 }
 
 .subBtn {
@@ -160,7 +159,7 @@ body{
 
 @media screen and (max-width: 767px) {
     body {
-        min-height: 150vh; 
+        min-height: 135vh; 
     }
 }
 
