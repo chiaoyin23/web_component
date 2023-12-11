@@ -101,6 +101,7 @@ body{
 }
 
 .subBtn {
+    /* margin-top: 20px; */
     max-width: 200px; 
     max-height: 100px; 
     width: 100%; 
@@ -108,7 +109,7 @@ body{
     border-radius: 0.5rem;
     overflow: hidden;
     object-fit: cover;
-    margin: 0 5px;
+    margin: 8% auto;
 }
 
 .info_img{
