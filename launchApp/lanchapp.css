@@ -97,12 +97,12 @@ body{
 
 .subBtn {
     max-width: 200px; 
-    max-height: 150px; 
+    max-height: 100px; 
     width:auto; 
     height: 60%; 
     border-radius: 0.5rem;
     overflow: hidden;
-    margin: 0 10px;
+    margin: 0 0.3rem;
     
 }
 
