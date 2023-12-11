@@ -68,14 +68,13 @@ body{
     padding-block: 1rem;
     grid-column: 2 / 3;
     z-index: 2;
-    margin-bottom: auto; 
+    margin-bottom: 150px;
 }
 
 .greetings p{
     padding: 5px 30px;
     text-shadow: rgb(101, 100, 100) 0.1em 0.1em 0.2em;
 }
-
 
 .welcome{
     display: flex;
@@ -89,9 +88,32 @@ body{
     grid-row: 2 / 4;  
     gap: 2rem;
 } 
- 
 
-.welcome img{
+
+.btn_group{
+    display: flex;
+    align-items: center; 
+    justify-content: space-around;
+}
+
+.subBtn {
+    max-width: 200px; 
+    max-height: 150px; 
+    width:auto; 
+    height: 60%; 
+    border-radius: 0.5rem;
+    overflow: hidden;
+    margin: 0 10px;
+    
+}
+
+.subBtn img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.info_img{
     max-width: 6rem;
     border-radius: 50%;
 }
