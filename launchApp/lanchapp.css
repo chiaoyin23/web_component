@@ -22,12 +22,11 @@
 
 body{
     text-align: center;
-    min-height: 100vh;
     color:var(--clr-300) ;
     display: grid;
     place-content: center;
-    /* transform: scale(var(--scale-factor));
-    transform-origin: top center; */
+    transform: scale(var(--scale-factor));
+    transform-origin: top center;
 }
 
 .button{
@@ -48,7 +47,7 @@ body{
 .card{
     display:grid;
     grid-template-columns: 2rem 20rem 2rem;
-    grid-template-rows: repeat(3,auto);
+    grid-template-rows: repeat(1,auto);
 }
 
 .hello{
@@ -56,6 +55,7 @@ body{
     font-weight: 600;
     text-shadow: rgb(101, 100, 100) 0.1em 0.1em 0.2em;
 }
+
 .greetings{
     color: var(--clr-600);
     background: var(--gradient);
@@ -152,6 +152,17 @@ body{
     border-radius: 50%;
 }
 
+@media screen and (min-width: 768px) {
+    body {
+        min-height: 100vh;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    body {
+        min-height: 150vh; 
+    }
+}
 
 @media screen and (max-width: 768px) {
     :root {
@@ -161,12 +172,12 @@ body{
 
 @media screen and (max-width: 480px) {
     :root {
-        --scale-factor: 0.6;
+        --scale-factor: 0.75;
     }
 }
 
 @media screen and (max-width: 320px) {
     :root {
-        --scale-factor: 0.4; 
+        --scale-factor: 0.7; 
     }
 }
