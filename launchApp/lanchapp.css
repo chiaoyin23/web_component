@@ -3,6 +3,7 @@
 *{
     font-family: 'Poppins', cursive,'Noto Sans TC';
     font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -77,6 +78,7 @@ body{
 }
 
 .welcome{
+    display: -webkit-box;
     display: flex;
     flex-direction: column; 
     align-items: center;
@@ -91,9 +93,12 @@ body{
 
 
 .btn_group{
+    display: -webkit-box;
     display: flex;
-    align-items: center; 
+    -webkit-box-pack: justify;
     justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
 }
 
 .subBtn {
