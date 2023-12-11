@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Noto+Sans+TC:wght@500&display=swap');
 @import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
 *{
-    font-family: 'Poppins', cursive,'Noto Sans TC';
-    font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
+    font-family: 'Poppins', 'Noto Sans TC', '微軟正黑體', cursive, sans-serif;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
@@ -104,18 +103,12 @@ body{
 .subBtn {
     max-width: 200px; 
     max-height: 100px; 
-    width:auto; 
-    height: 60%; 
+    width: 100%; 
+    height: auto; 
     border-radius: 0.5rem;
     overflow: hidden;
-    margin: 0 0.3rem;
-    
-}
-
-.subBtn img {
-    width: 100%;
-    height: 100%;
     object-fit: cover;
+    margin: 0 5px;
 }
 
 .info_img{
