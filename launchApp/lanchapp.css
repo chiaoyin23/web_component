@@ -45,6 +45,12 @@ body{
 }
 
 .card{
+    position: absolute;
+    top: calc(15% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+    padding-block: 1rem;
+    z-index: 2;
     display:grid;
     grid-template-columns: 2rem 20rem 2rem;
     grid-template-rows: repeat(1,auto);
@@ -65,6 +71,8 @@ body{
 }
 
 .greetings div{
+   
+    margin-bottom: 150px;
     padding-block: 1rem;
     grid-column: 2 / 3;
     z-index: 2;
@@ -101,7 +109,6 @@ body{
 }
 
 .subBtn {
-    /* margin-top: 20px; */
     max-width: 200px; 
     max-height: 100px; 
     width: 100%; 
@@ -109,7 +116,7 @@ body{
     border-radius: 0.5rem;
     overflow: hidden;
     object-fit: cover;
-    margin: 8% auto;
+    margin: 0px 5px;
 }
 
 .info_img{
