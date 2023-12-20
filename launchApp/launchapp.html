@@ -11,11 +11,11 @@
 
     <script type="text/javascript">
         var userAgent = navigator.userAgent.toLowerCase();
-        if (userAgent.search(/iphone|ipad|ipod|Android/) > -1) {
+        if (userAgent.search(/iphone|ipad|ipod|android/) > -1) {
             var url = window.location.href;
             url = url.replace(new RegExp("https", "g"), "applinks");
             var appstore = 'https://apps.apple.com/tw/app/%E6%94%BF%E5%A4%A7%E9%80%9A-nccupass/id6449585939?itsct=apps_box_link&itscg=30200';
-            if (userAgent.search(/Android/) > -1) {
+            if (userAgent.search(/android/) > -1) {
                 appstore = 'https://play.google.com/store/apps/details?id=com.nccupass.nccupass_student&pcampaignid=web_share'
             }
             var timeout;

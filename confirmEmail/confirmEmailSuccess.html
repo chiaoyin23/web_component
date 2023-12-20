@@ -14,7 +14,7 @@
             document.getElementById("applink").href = "applinks://nccupass.com/login";
             // 如果是手機
             var userAgent = navigator.userAgent.toLowerCase();
-            if (userAgent.search(/iphone|ipad|ipod|Android/) > -1) {
+            if (userAgent.search(/iphone|ipad|ipod|android/) > -1) {
                 document.getElementById("applink").click()
             } else {
                 window.location.href = "https://nccupass.com/";
